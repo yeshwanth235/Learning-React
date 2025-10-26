@@ -16,12 +16,16 @@ const Example3 = () => {
    })
   })
 
-  return () => {
-   window.removeEventListener('resize', () => {
-    setWindowSize({
+  const handleResize = () => {
+   setWindowSize({
      width: window.innerWidth,
      height: window.innerHeight
     })
+  }
+
+  return () => {
+   window.removeEventListener('resize', () => {
+    handleResize()
    })
   }
  },[])

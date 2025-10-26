@@ -6,12 +6,11 @@ const Example4 = () => {
  const [loading, setLoading] = useState(false)
  const [error, setError] = useState(null)
 
- const abortController = new AbortController()
-
- const fetchUser = async () => {
+ const fetchUser = async (signal) => {
   try {
    setLoading(true)
-   const response = await fetch('https://randomuser.me/api/', { signal: abortController.signal })
+   setError(null)
+   const response = await fetch('https://randomuser.me/api/', { signal })
    const data = await response.json()
    setUser(data.results[0])
   }catch(err) {
@@ -21,7 +20,8 @@ const Example4 = () => {
  }
 
  useEffect(() => {
-  fetchUser()
+  const abortController = new AbortController()
+  fetchUser(abortController.signal)
   return () => {
    abortController.abort()
   }

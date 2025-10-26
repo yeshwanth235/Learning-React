@@ -5,11 +5,10 @@ const Example2 = () => {
  const [isRunning, setIsRunning] = useState(true)
 
  useEffect(() => {
+  if(!isRunning) return
   let intervalRef = null
   intervalRef = setInterval(() => {
-   if(isRunning) {
     setTime(new Date())
-   }
   }, 1000)
   return () => {
    clearInterval(intervalRef)
