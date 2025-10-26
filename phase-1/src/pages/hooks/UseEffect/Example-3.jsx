@@ -14,21 +14,21 @@ const Example3 = () => {
     })
   }
 
- useEffect(() => {
-  window.addEventListener('resize', handleResize())
-
-  return () => {
-   window.removeEventListener('resize', handleResize())
+  const getDeviceType = () => {
+    if(windowSize.width < 768) return {type: 'Mobile', color: 'bg-red-500'}
+    if(windowSize.width < 1024) return {type: 'Tablet', color: 'bg-yellow-500'}
+    return {type: 'Desktop', color: 'bg-green-500'}
   }
- },[])
 
- const getDeviceType = () => {
-  if(windowSize.width < 768) return {type: 'Mobile', color: 'bg-red-500'}
-  if(windowSize.width < 1024) return {type: 'Tablet', color: 'bg-yellow-500'}
-  return {type: 'Desktop', color: 'bg-green-500'}
- }
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
 
- const device = getDeviceType()
+    return () => {
+    window.removeEventListener('resize', handleResize)
+    }
+  },[])
+
+  const device = getDeviceType()
 
  return (
   <div className="mt-4">
