@@ -35,13 +35,13 @@ const Example4 = () => {
   )
  }
 
- // if(error) {
- //  return (
- //   <div className="mt-4 p-8 bg-red-100 border border-red-400 rounded-md">
- //    <p className="text-red-400">Error: {error}</p>
- //   </div>
- //  )
- // }
+ if(error) {
+  return (
+   <div className="mt-4 p-8 bg-red-100 border border-red-400 rounded-md">
+    <p className="text-red-400">Error: {error}</p>
+   </div>
+  )
+ }
 
  return (
   <div className="mt-4">

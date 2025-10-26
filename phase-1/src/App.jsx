@@ -2,19 +2,23 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Navbar from './components/Navbar.jsx'
-import UseEffect from './pages/UseEffect/Main'
-
-
+import UseEffect from './pages/hooks/UseEffect/Main.jsx'
+import Challenges from './pages/main/Challenges.jsx'
+import Challenge1 from './pages/challenges/UseEffect/Challenge-1.jsx'
 
 function App() {
 
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/useEffect" element={<UseEffect />} />
-      </Routes>
+      <div className="m-5 lg:m-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/useEffect" element={<UseEffect />} />
+          <Route path="/challenges" element={<Challenges />} />
+          <Route path="/useEffect/challenge-1" element={<Challenge1 />} />
+        </Routes>
+      </div>
     </>
   )
 }

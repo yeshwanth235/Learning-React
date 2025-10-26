@@ -7,7 +7,7 @@ import Example4 from "./Example-4"
 
 const Main = () => {
   return (
-   <div className="m-5 lg:m-20">
+   <div>
     <h1 className="text-xl">useEffect Hook</h1>
     <div className="m-2 lg:m-5">
      <Concept />
