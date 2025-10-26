@@ -92,7 +92,7 @@ const Challenge1 = () => {
           <div className="font-semibold pb-1">
             <h1>Current Time</h1>
           </div>
-          <div className="flex align-cente">
+          <div className="flex">
             <div className="p-1 bg-fuchsia-400 rounded-sm">{formatTime(time, 'hours')}</div>
             <div className="p-1 text-fuchsia-400">:</div>
             <div className="p-1 bg-fuchsia-400 rounded-sm">{formatTime(time, 'minutes')}</div>
@@ -114,7 +114,7 @@ const Challenge1 = () => {
           {
             loading && (
               <div className="flex justify-center items-center">
-                <div className="animated-spin rounded-full h-18 w-18 border-b-8 border-blue-400"></div>
+                <div className="animate-spin rounded-full h-18 w-18 border-b-8 border-blue-400"></div>
               </div>
             )
           }
