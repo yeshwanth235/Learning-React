@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react"
+import { memo, useCallback, useEffect, useMemo, useState } from "react"
 
 
 const Example1 = () => {
@@ -108,15 +108,16 @@ const SearchFilterList = () => {
 
   const handleSearch = useCallback((e) => {
    setSearchTerm(e.target.value)
-  })
+  }, [])
 
   const handleCategoryChange = useCallback((e) => {
    setCategory(e.target.value)
-  })
+  }, [])
 
-  useState(() => {
+  useEffect(() => {
    setRenderCount(prev => prev + 1)
-  })
+  }, [searchTerm, category])
+
  return (
    <div className="p-8 max-w-6xl mx-auto">
     <h1 className="text-3xl font-bold mb-6 text-gray-600">Product Search & Filter</h1>
@@ -170,8 +171,7 @@ const SearchFilterList = () => {
  )
 }
 
-const ProductCard = ({ product }) => {
-  console.log(`Rendering product: ${product.name}`)
+const ProductCard = memo(({ product }) => {
   
   return (
     <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -180,7 +180,7 @@ const ProductCard = ({ product }) => {
       <p className="text-xl font-bold text-green-600 mt-2">${product.price}</p>
     </div>
   )
-}
+})
 
 
 export default Example1
