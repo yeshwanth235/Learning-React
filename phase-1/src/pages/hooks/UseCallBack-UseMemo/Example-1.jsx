@@ -124,7 +124,7 @@ const SearchFilterList = () => {
 
     <div className="mb-4 p-3 bg-blue-100 rounded">
      <p className="text-sm font-semibold">Component rendered: {renderCount}</p>
-     <p className="text-xs text-gray-600">open console to see whne filtering applies</p>
+     <p className="text-xs text-gray-600">open console to see when filtering applies</p>
     </div>
 
     <div className="mb-6 flex gap-4">

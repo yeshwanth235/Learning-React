@@ -6,6 +6,8 @@ import UseEffect from './pages/hooks/UseEffect/Main.jsx'
 import Challenges from './pages/main/Challenges.jsx'
 import Challenge1 from './pages/challenges/UseEffect/Challenge-1.jsx'
 import UsecallbackUseMemo from './pages/hooks/UseCallBack-UseMemo/Main.jsx'
+import UseRef from './pages/hooks/UseRef/Main.jsx'
+import Hooks from './pages/main/Hooks.jsx'
 
 function App() {
 
@@ -16,8 +18,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
+          <Route path="/hooks" element={<Hooks />} />
           <Route path="/useCallback-useMemo" element={<UsecallbackUseMemo />} />
           <Route path="/useEffect" element={<UseEffect />} />
+          <Route path="/useRef" element={<UseRef />} />
 
           <Route path="/challenges" element={<Challenges />} />
           <Route path="/useEffect/challenge-1" element={<Challenge1 />} />
